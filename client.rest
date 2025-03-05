@@ -1,0 +1,55 @@
+@baseUrl = http://localhost:3000
+
+# RECADOS
+### Lista todos os recados
+GET {{baseUrl}}/recados/
+?limit=10
+&offset=0
+
+### Lista apenas um recado
+GET {{baseUrl}}/recados/2/
+
+### Cria um recado
+POST {{baseUrl}}/recados/
+Content-Type: application/json
+
+{
+    "texto": "5 NOVO Recado",
+    "de": "Joana",
+    "para": "João"
+}
+
+### Atualiza um recado
+PATCH {{baseUrl}}/recados/4/
+Content-Type: application/json
+
+{
+    "lido": true
+}
+
+### Apaga um recado
+DELETE {{baseUrl}}/recados/2/
+
+
+
+#
+
+
+# PESSOAS
+### Lista todos as pessoas
+GET {{baseUrl}}/pessoas/
+?limit=10
+&offset=0
+
+### Lista apenas uma pessoa
+GET {{baseUrl}}/pessoas/2/
+
+### Cria uma pessoa
+POST {{baseUrl}}/pessoas/
+Content-Type: application/json
+
+{
+    "email": "robertinho2@orkut.com",
+    "password": "123456",
+    "nome": "Roberto"
+}
