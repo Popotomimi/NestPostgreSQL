@@ -7,24 +7,24 @@ GET {{baseUrl}}/recados/
 &offset=0
 
 ### Lista apenas um recado
-GET {{baseUrl}}/recados/2/
+GET {{baseUrl}}/recados/10/
 
 ### Cria um recado
 POST {{baseUrl}}/recados/
 Content-Type: application/json
 
 {
-    "texto": "5 NOVO Recado",
-    "de": "Joana",
-    "para": "João"
+    "texto": "recado teste",
+    "deId": 7,
+    "paraId": 1
 }
 
 ### Atualiza um recado
-PATCH {{baseUrl}}/recados/4/
+PATCH {{baseUrl}}/recados/14/
 Content-Type: application/json
 
 {
-    "lido": true
+    "texto": "de lelezinha para Robertão Gostosão"
 }
 
 ### Apaga um recado
@@ -35,6 +35,7 @@ DELETE {{baseUrl}}/recados/2/
 #
 
 
+
 # PESSOAS
 ### Lista todos as pessoas
 GET {{baseUrl}}/pessoas/
@@ -42,14 +43,26 @@ GET {{baseUrl}}/pessoas/
 &offset=0
 
 ### Lista apenas uma pessoa
-GET {{baseUrl}}/pessoas/2/
+GET {{baseUrl}}/pessoas/8/
 
 ### Cria uma pessoa
 POST {{baseUrl}}/pessoas/
 Content-Type: application/json
 
 {
-    "email": "robertinho2@orkut.com",
+    "email": "robertinho3@orkut.com",
     "password": "123456",
     "nome": "Roberto"
 }
+
+### Atualiza uma pessoa
+PATCH {{baseUrl}}/pessoas/9/
+Content-Type: application/json
+
+{
+    "password": "55555",
+    "nome": "Elisabeth"
+}
+
+### Apaga uma pessoa
+DELETE {{baseUrl}}/pessoas/8/
