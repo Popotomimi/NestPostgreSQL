@@ -14,6 +14,7 @@ import {
 import { RecadosService } from './recados.service';
 import { CreateRecadoDto } from './dto/create-recado.dto';
 import { UpdateRecadoDto } from './dto/update-recado.dto';
+import { PaginationDto } from 'src/common/dto/pagination.dto';
 
 // CRUD
 // Create -> POST -> Criar um recado
@@ -33,10 +34,8 @@ export class RecadosController {
 
   @HttpCode(HttpStatus.OK)
   @Get()
-  findAll(@Query() pagination: any) {
-    const { limit = 10, offset = 0 } = pagination;
-    // return `Retorna todos os recados. Limit=${limit}, Offset=${offset}.`;
-    return this.recadosService.findAll();
+  findAll(@Query() paginationDto: PaginationDto) {
+    return this.recadosService.findAll(paginationDto);
   }
 
   @Get(':id')
