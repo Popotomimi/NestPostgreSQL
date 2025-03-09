@@ -7,20 +7,20 @@ GET {{baseUrl}}/recados/
 &offset=1
 
 ### Lista apenas um recado
-GET {{baseUrl}}/recados/10/
+GET {{baseUrl}}/recados/18/
 
 ### Cria um recado
 POST {{baseUrl}}/recados/
 Content-Type: application/json
 
 {
-    "texto": "recado teste",
+    "texto": "Novo recado teste",
     "deId": 7,
     "paraId": 1
 }
 
 ### Atualiza um recado
-PATCH {{baseUrl}}/recados/14/
+PATCH {{baseUrl}}/recados/30/
 Content-Type: application/json
 
 {
@@ -28,7 +28,7 @@ Content-Type: application/json
 }
 
 ### Apaga um recado
-DELETE {{baseUrl}}/recados/2/
+DELETE {{baseUrl}}/recados/29/
 
 
 
