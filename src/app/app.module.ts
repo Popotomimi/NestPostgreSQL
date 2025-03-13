@@ -10,7 +10,6 @@ import { RecadosModule } from '../recados/recados.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PessoasModule } from 'src/pessoas/pessoas.module';
 import { SimpleMiddleware } from 'src/common/middlewares/simple.middleware';
-import { AnotherMiddleware } from 'src/common/middlewares/another.middleware';
 
 @Module({
   imports: [
@@ -32,7 +31,7 @@ import { AnotherMiddleware } from 'src/common/middlewares/another.middleware';
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(SimpleMiddleware, AnotherMiddleware).forRoutes({
+    consumer.apply(SimpleMiddleware).forRoutes({
       path: '*',
       method: RequestMethod.ALL,
     });
